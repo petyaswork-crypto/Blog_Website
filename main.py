@@ -1,4 +1,5 @@
-impoprt os
+from pathlib import Path
+from dotenv import dotenv_values
 from datetime import date
 from flask import Flask, abort, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
@@ -17,7 +18,9 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
+env_path = Path(r"C:\Users\Петя\Coding\PythonProject\Day 71-Deploying the Blog Website\.env")
+secrets = dotenv_values(env_path)
+app.config["SECRET_KEY"] = secrets["SECRET_KEY"]
 
 # This part deals with the warning about ckeditor (if it shows up)
 app.config['CKEDITOR_SERVE_LOCAL'] = True
