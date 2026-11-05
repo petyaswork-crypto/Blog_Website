@@ -31,6 +31,13 @@ the Start Bootstrap "Clean Blog" theme.
 - Responsive UI — Bootstrap 5 with the Clean Blog theme
 
 
+## 🔑 Note on the "SECRET_KEY"
+
+This project needs a `SECRET_KEY` to run. Every user must provide their own key.
+Do not reuse the key from someone else's setup, and never commit your
+real key to this (or any) repository.
+
+
 ## 🚀 Installation
 
 ### 1. Clone the repository
