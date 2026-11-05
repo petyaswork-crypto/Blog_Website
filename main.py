@@ -16,7 +16,7 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 # This part deals with the warning about ckeditor (if it shows up)
 app.config['CKEDITOR_SERVE_LOCAL'] = True
