@@ -18,9 +18,7 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
 
 app = Flask(__name__)
-env_path = Path(r"C:\Users\Петя\Coding\PythonProject\Day 71-Deploying the Blog Website")
-secrets = dotenv_values(env_path)
-app.config["SECRET_KEY"] = secrets["SECRET_KEY"]
+app.config['SECRET_KEY'] = "YOUR_SECRET_KEY"
 
 # This part deals with the warning about ckeditor (if it shows up)
 app.config['CKEDITOR_SERVE_LOCAL'] = True
