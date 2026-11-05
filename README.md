@@ -65,6 +65,12 @@ SECRET_KEY=3f9a1c8e2b7d4a6f0e5c9b1d8a7f2e4c6b3a9d1f0e8c7b5a2d4f6e9c1a3b8d7
 
 Rules: no spaces around the equals sign, no quotes needed, one line, no wrapping.
 
+### 4. For the steps as written, main.py will need these imports:
+
+from pathlib import Path
+from dotenv import dotenv_values
+from flask import Flask
+
 
 ## 🚀 Installation
 
