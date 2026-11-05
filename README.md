@@ -31,11 +31,39 @@ the Start Bootstrap "Clean Blog" theme.
 - Responsive UI — Bootstrap 5 with the Clean Blog theme
 
 
-## 🔑 Note on the "SECRET_KEY"
+## 🔑 Notes on the "SECRET_KEY"
 
-This project needs a `SECRET_KEY` to run. Every user must provide their own key.
-Do not reuse the key from someone else's setup, and never commit your
-real key to this (or any) repository.
+This project requires a Flask SECRET_KEY. Flask uses it to sign session cookies and flash messages. Without it, any feature that uses sessions will fail.
+
+Every user must generate and use their own key. Do not reuse someone else's key, and never commit your key to this repository.
+
+Here are some guidlines for creating such key (optional):
+
+### 1. Generate a key
+Run this in any terminal (Python is already required for this project):
+
+python -c "import secrets; print(secrets.token_hex(32))"
+
+You will get a 64-character random string, for example:
+
+3f9a1c8e2b7d4a6f0e5c9b1d8a7f2e4c6b3a9d1f0e8c7b5a2d4f6e9c1a3b8d7
+
+Copy the whole thing. The secrets module is Python's cryptographically secure random generator. 
+Do not use random, and do not use a short or guessable word like "secret" or "changeme".
+
+### 2. Create your .env file
+Copy the template:
+cp .env.example .env
+
+On Windows PowerShell:
+Copy-Item .env.example .env
+
+### 3. Put the key in .env
+Open .env and set:
+
+SECRET_KEY=3f9a1c8e2b7d4a6f0e5c9b1d8a7f2e4c6b3a9d1f0e8c7b5a2d4f6e9c1a3b8d7
+
+Rules: no spaces around the equals sign, no quotes needed, one line, no wrapping.
 
 
 ## 🚀 Installation
